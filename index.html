@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Welcome to my homepage</title>
+    <title>Hyper's blog</title>
 
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,18 +23,48 @@
   </head>
   <body>
 
-	<div class="container">
+    <div class="container">
 
       <div class="page-header">
-        <h1>Hello, world!</h1>
-        <p class="lead">Welcome to my homepage.</p>
+        <h1>Hyper's blog</h1>
       </div>
 
-      <div class="row"><center>It's under construction.</center></div>
+      <ul>
+        <li><a class="btn btn-link" data-toggle="modal" data-target="#md-modal" data-title="Elasticsearch 学习笔记" data-src="md/elasticsearch.md">Elasticsearch 学习笔记</a></li>
+        <!-- li><a class="btn btn-link" data-toggle="modal" data-target="#md-modal" data-title="React 学习笔记" data-src="md/react.md">React 学习笔记</a></li -->
+      </ul>
 
     </div> <!-- /container -->
- 
+
+    <div id="md-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h2 class="modal-title" id="modal-title"></h2>
+          </div>
+          <div id="modal-body" class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/marked.js"></script>
+
+    <script type="text/javascript">
+    $().ready(function() {
+      var $modal = $('#md-modal')
+      $modal.on('shown.bs.modal', function (event) {
+        var target = $(event.relatedTarget)
+        var title = target.data('title')
+        $('#modal-title').html(title)
+        $.get(target.data('src'), function(res) {
+          $('#modal-body').html(marked(res))
+        })
+      })
+    })
+    </script>
   </body>
 </html>
