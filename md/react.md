@@ -1,5 +1,3 @@
-# React 入门参考 #
-
 ## 安装编译工具 ##
 
 ```npm install -g react-tools```

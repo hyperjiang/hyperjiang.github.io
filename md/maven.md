@@ -1,5 +1,3 @@
-# Maven 入门参考 #
-
 ## 安装 ##
 
 从官网 http://maven.apache.org/ 下载解压，然后把安装路径加入系统PATH，即可使用。
@@ -46,3 +44,7 @@
         <mirrorOf>central</mirrorOf>
     </mirror>
 ```
+
+## 参考资料 ##
+
+[Apache Maven 入门篇](http://www.oracle.com/technetwork/cn/community/java/apache-maven-getting-started-1-406235-zhs.html)
