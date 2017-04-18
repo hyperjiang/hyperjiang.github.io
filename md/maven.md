@@ -45,6 +45,64 @@
     </mirror>
 ```
 
+## 使用私有仓库 ##
+
+假设在本地搭建了私有仓库，端口8081，下面是一个完整的所有包都从私有仓库下载的maven配置：
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <servers>
+    <server>
+      <id>nexus</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+  </servers>
+
+  <mirrors>
+    <mirror>
+      <id>nexus</id>
+      <mirrorOf>*</mirrorOf>
+      <url>http://localhost:8081/repository/maven-public/</url>
+    </mirror>
+  </mirrors>
+
+  <profiles>
+    <profile>
+      <id>nexus</id>
+      <!--Enable snapshots for the built in central repo to direct -->
+      <!--all requests to nexus via the mirror -->
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>http://localhost:8081/repository/maven-public/</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+      </repositories>
+     <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>http://localhost:8081/repository/maven-public/</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
+
+</settings>
+```
+
+
 ## 命令行创建一个空项目  ##
 ```
 mvn archetype:generate -DgroupId=com.example.helloword -DartifactId=helloword -Dpackage=com.example.helloword -Dversion=1.0 -DarchetypeCatalog=internal
