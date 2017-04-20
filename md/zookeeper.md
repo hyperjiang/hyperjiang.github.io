@@ -39,3 +39,9 @@ make install
 ```
 
 编辑 php.ini 加入 extension=zookeeper.so
+
+## 命令行客户端  ##
+
+``` bin/zkCli.sh -server 127.0.0.1:2181 ```
+
+[官方参考文档](https://zookeeper.apache.org/doc/trunk/zookeeperStarted.html)
