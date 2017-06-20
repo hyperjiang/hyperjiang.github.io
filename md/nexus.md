@@ -46,6 +46,39 @@ mvn deploy:deploy-file -DgroupId=com.pingan \
  -Durl=http://localhost:8081/repository/maven-releases/
 ```
 
+## 把自己项目打的包上传到nexus  ##
+
+首先在maven的全局配置里面的<servers>添加nexus账户密码信息
+```
+<server>
+  <id>nexus</id>
+  <username>admin</username>
+  <password>admin123</password>
+</server>
+```
+
+然后在项目的pom.xml的<project>下面添加子节点
+```
+<distributionManagement>
+  <repository>
+    <id>nexus</id>
+    <name>Nexus Release Repository</name>
+    <url>http://localhost:8081/repository/maven-releases/</url>
+  </repository>
+  <snapshotRepository>
+    <id>nexus</id>
+    <url>http://localhost:8081/repository/maven-snapshots/</url>
+  </snapshotRepository>
+</distributionManagement>
+```
+
+在项目更目录运行
+```
+mvn deploy
+```
+即可将jar上传到nexus私服
+
 ## 参考资料 ##
 
 [使用nexus3搭建私有仓库](http://www.jianshu.com/p/dbeae430f29d)
+[上传jar包到nexus私服](https://my.oschina.net/lujianing/blog/297128)
