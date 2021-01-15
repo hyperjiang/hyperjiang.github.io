@@ -2,3 +2,4 @@
 - 技术
   - 规范
     - [kafka使用规范](/tech/guideline/kafka.md)
+    - [mysql使用规范](/tech/guideline/mysql.md)
