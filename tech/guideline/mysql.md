@@ -41,7 +41,7 @@
 - 单张表中索引数量不超过5个
 - 单个索引中的字段数不超过5个
 - 对字符串使⽤用前缀索引，前缀索引长度不超过8个字符
-- 表必须有主键，建议使用 `id BIGINT NOT NULL AUTO_INCREMENT COMMENT '主键'`.
+- 表必须有主键，建议使用 `id BIGINT NOT NULL AUTO_INCREMENT COMMENT '主键'`
 - 不使用更新频繁的列作为主键
 - 尽量不选择字符串列作为主键
 - 不使用UUID MD5 HASH这些作为主键（数值太离散）

@@ -1,5 +1,6 @@
 - [首页](/)
 - 技术
   - 规范
-    - [kafka使用规范](/tech/guideline/kafka.md)
-    - [mysql使用规范](/tech/guideline/mysql.md)
+    - [kafka 使用规范](/tech/guideline/kafka.md)
+    - [mysql 使用规范](/tech/guideline/mysql.md)
+    - [rest 规范](/tech/guideline/rest.md)
