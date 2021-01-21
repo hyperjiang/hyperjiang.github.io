@@ -16,7 +16,7 @@ REST 是 `REpresentational State Transfer` 的缩写，它是一种用于分布�
 
 ## 动作规范
 
-我们使用下列http method来实现rest的动作：
+使用下列 http method 来实现rest的动作：
 
 - GET（SELECT）：从服务器取出资源（一项或多项）
 - POST（CREATE）：在服务器新建一个资源
@@ -38,4 +38,5 @@ REST 是 `REpresentational State Transfer` 的缩写，它是一种用于分布�
 ## 扩展阅读
 
 [理解RESTful架构](http://www.ruanyifeng.com/blog/2011/09/restful.html)
+
 [HTTP状态码](https://restfulapi.net/http-status-codes/)

@@ -3,4 +3,5 @@
   - 规范
     - [kafka 使用规范](/tech/guideline/kafka.md)
     - [mysql 使用规范](/tech/guideline/mysql.md)
+    - [redis 使用规范](/tech/guideline/redis.md)
     - [rest 规范](/tech/guideline/rest.md)
