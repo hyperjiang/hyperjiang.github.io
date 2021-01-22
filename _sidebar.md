@@ -1,5 +1,8 @@
 - [首页](/)
 - 技术
+  - 环境搭建（MacOS）
+    - [java](/tech/env/java.md)
+    - [python](/tech/env/python.md)
   - 规范
     - [kafka 使用规范](/tech/guideline/kafka.md)
     - [mysql 使用规范](/tech/guideline/mysql.md)
