@@ -39,3 +39,18 @@ python --version
 python3 --version
 pip --version
 ```
+
+7. 设置 pip 中国镜像
+
+    *默认的配置路径是$HOME/.config/pip/pip.conf*
+
+```
+# 腾讯源
+pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple
+```
+
+8. 查看 pip 配置
+
+```
+pip config list
+```
