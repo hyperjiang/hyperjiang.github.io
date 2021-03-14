@@ -1,6 +1,7 @@
 - [首页](/)
 - 技术
   - 环境搭建（MacOS）
+    - [golang](/tech/env/golang.md)
     - [java](/tech/env/java.md)
     - [python](/tech/env/python.md)
   - 规范
