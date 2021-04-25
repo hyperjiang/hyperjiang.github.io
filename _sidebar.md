@@ -3,6 +3,7 @@
   - 环境搭建（MacOS）
     - [golang](/tech/env/golang.md)
     - [java](/tech/env/java.md)
+    - [nodejs](/tech/env/nodejs.md)
     - [python](/tech/env/python.md)
   - 规范
     - [kafka 使用规范](/tech/guideline/kafka.md)
