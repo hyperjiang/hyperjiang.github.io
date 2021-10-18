@@ -10,3 +10,4 @@
     - [mysql 使用规范](/tech/guideline/mysql.md)
     - [redis 使用规范](/tech/guideline/redis.md)
     - [rest 规范](/tech/guideline/rest.md)
+    - [代码提交约定](/tech/guideline/commit.md)
