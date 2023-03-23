@@ -28,6 +28,11 @@
 
 ## 常用的交换机类型
 
+### default (默认)
+The default exchange is a pre-declared direct exchange with no name, usually referred by an empty string. When you use default exchange, your message is delivered to the queue with a name equal to the routing key of the message. Every queue is automatically bound to the default exchange with a routing key which is the same as the queue name.
+
+默认的交换机是没有名字的（空字符串），所有队列都会自动绑到默认交换机，routing key 就是队列名字。
+
 ### direct (完全匹配)
 The message is routed to the queues whose binding key exactly matches the routing key of the message.
 
@@ -52,6 +57,18 @@ Headers exchanges use the message header attributes for routing.
 根据消息的 headers 来投递消息而不是根据 routing key 来投递消息，在绑定队列时需要指定参数 Arguments，发送消息时只有指定的 headers 与队列绑定时对应的 Arguments 相匹配时，消息才会被正确投递。
 
 举个例子，假设 queue1 的 Arguments 是 `x=1`，queue2 的 Arguments 是 `y=1`，那么发送消息的时候指定 header 为 `x=1`，则只有 queue1 能收到；指定多个 header，比如 `x=1, y=1`，那么 queue1 和 queue2 都能收到消息。
+
+`x-match` 是一个特殊参数，值为 `all` 的时候表示所有参数都必须满足才能匹配，值为 `any` 的时候只要参数其中有一个匹配就行。
+
+## 死信
+死信是指无法投递或处理的消息，原因可能有：
+- 过期了，超过了TTL
+- 队列满了
+- 消息被负应答 (negatively acknowledged)
+
+默认死信是会被丢弃的，但我们也可以设置死信交换机 DLX (Dead Letter Exchange) 和死信队列来存储和处理死信。
+
+详细参考 https://www.rabbitmq.com/dlx.html
 
 ## 常见问题
 
