@@ -13,3 +13,5 @@
     - [代码提交约定](/tech/guideline/commit.md)
   - 容器化
     - [helm](/tech/k8s/helm.md)
+  - 消息队列
+    - [rabbitmq](/tech/mq/rabbitmq.md)
