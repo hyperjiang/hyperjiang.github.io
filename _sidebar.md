@@ -6,6 +6,7 @@
     - [nodejs](/tech/env/nodejs.md)
     - [python](/tech/env/python.md)
   - 规范
+    - [elasticsearch 使用规范](/tech/guideline/es.md)
     - [kafka 使用规范](/tech/guideline/kafka.md)
     - [mysql 使用规范](/tech/guideline/mysql.md)
     - [redis 使用规范](/tech/guideline/redis.md)
